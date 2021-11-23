@@ -10,13 +10,17 @@
   <body>
     <header>
       <section class="player-section">
+        <button id="again-btn" class="btn again">Again!</button>
+
+        <button class="btn difficulty">Hard</button>
         <input type="text" class="player" placeholder="player..." />
+
+        <!-- <p class="between">(The secret number contain 4 digits!)</p> -->
       </section>
-      <h1 class="title">Guess My Number!</h1>
-      <p class="between">(The secret number contain 4 digits!)</p>
-      <button class="btn again">Again!</button>
-      <button class="btn difficulty">Hard</button>
-      <div class="number">?</div>
+      <div class="guess-container">
+        <h1 class="title">Guess My Number!</h1>
+        <div class="number">?</div>
+      </div>
     </header>
     <main>
       <section class="left">
@@ -31,7 +35,15 @@
         <p class="label-highscore">
           🥇 Highscore: <span class="highscore">0</span>
         </p>
+        <h3 class="mean-message easy"></h3>
       </section>
+      <!-- <button class="show-modal">Show modal 3</button> -->
+
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <p class="winner"></p>
+      </div>
+      <div class="overlay hidden"></div>
     </main>
     <script src="index.js"></script>
   </body>
