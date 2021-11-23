@@ -182,17 +182,22 @@ p {
 }
 
 .modal {
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
   text-align: center;
-  background-color: white;
+  background: url(https://thumbs.gfycat.com/DamagedDirtyAmethystgemclam-max-1mb.gif);
   padding: 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
+  height: 900px;
 }
 
 .overlay {
@@ -207,8 +212,10 @@ p {
 }
 
 .winner {
-  color: black;
+  color: whitesmoke;
   line-height: 2.5rem;
+  margin-top: 300px;
+  font-size: 24px;
 }
 /* @media (max-width: 600px) {
   body {
