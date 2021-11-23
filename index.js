@@ -32,6 +32,7 @@ const closeModal = function () {
   document.querySelector("body").style.backgroundColor = `#222`;
   document.querySelector(".number").style.width = "15rem";
   document.querySelector(".cows").textContent = "....";
+  document.querySelector(".bull").textContent = "....";
   rightMean.textContent = "";
   document.querySelector(".highscore").textContent = 0;
 };
@@ -78,6 +79,44 @@ function handleChange(e) {
   input.value = "";
 }
 
+let inputPlayer = "player name ...";
+let numPlayer = "Your number...";
+// input.placeholder = inputPlayer;
+let begin = 0;
+let end = inputPlayer.length;
+
+function runningText() {
+  document.getElementsByName(
+    "marquee1"
+  )[0].placeholder = `${inputPlayer.substring(
+    begin,
+    end
+  )} ${inputPlayer.substring(0, begin)}`;
+
+  begin++;
+  if (begin >= end) {
+    begin = 0;
+  }
+  window.setTimeout("runningText()", 500);
+}
+runningText();
+
+function runningNum() {
+  document.getElementsByName(
+    "marquee2"
+  )[0].placeholder = `${numPlayer.substring(begin, end)} ${numPlayer.substring(
+    0,
+    begin
+  )}`;
+
+  begin++;
+  if (begin >= end) {
+    begin = 0;
+  }
+  window.setTimeout("runningNum()", 500);
+}
+runningNum();
+
 let level = false;
 const toggle = document
   .querySelector(".difficulty")
@@ -86,9 +125,11 @@ const toggle = document
     if (easy.textContent === "Hard") {
       level = true;
       easy.textContent = "Easy";
+      document.querySelector(".difficulty").style.backgroundColor = "#008000";
     } else {
       level = false;
       easy.textContent = "Hard";
+      document.querySelector(".difficulty").style.backgroundColor = "#ff0000";
     }
     rightMean.textContent = "";
     console.log(`${easy.textContent}`);
@@ -97,6 +138,7 @@ const toggle = document
     document.querySelector(".bull").textContent = "...";
     document.querySelector(".cows").textContent = "....";
   });
+
 // lo;
 // document.querySelector(".player").addEventListener("onchange", function () {});
 document.querySelector(".again").addEventListener("click", function () {
@@ -112,6 +154,7 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector("body").style.backgroundColor = `#222`;
   document.querySelector(".number").style.width = "15rem";
   document.querySelector(".cows").textContent = "....";
+  document.querySelector(".bull").textContent = "....";
   rightMean.textContent = "";
 
   console.log(`${level}`);

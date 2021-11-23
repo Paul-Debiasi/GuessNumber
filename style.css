@@ -92,6 +92,11 @@ h1 {
   text-align: center;
   display: block;
   margin-bottom: 3rem;
+  overflow-y: hidden;
+}
+.guess::-webkit-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 .player {
@@ -106,7 +111,34 @@ h1 {
   display: block;
   margin-top: 2rem;
 }
+.player:hover {
+  /* background-color: white; */
+}
 
+::-webkit-input-placeholder {
+  animation: ticker 15s infinite linear;
+  color: yellow;
+}
+
+input {
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+.player::placeholder:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-400%, 0, 0);
+  }
+}
 .btn {
   border: none;
   background-color: #eee;
@@ -120,6 +152,7 @@ h1 {
 
 .difficulty {
   margin-left: 18px;
+  color: white;
 }
 
 .btn:hover {
@@ -212,7 +245,7 @@ p {
 }
 
 .winner {
-  color: whitesmoke;
+  color: white;
   line-height: 2.5rem;
   margin-top: 300px;
   font-size: 24px;

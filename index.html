@@ -13,7 +13,12 @@
         <button id="again-btn" class="btn again">Again!</button>
 
         <button class="btn difficulty">Hard</button>
-        <input type="text" class="player" placeholder="player..." />
+        <input
+          type="text"
+          class="player"
+          placeholder="player..."
+          name="marquee1"
+        />
 
         <!-- <p class="between">(The secret number contain 4 digits!)</p> -->
       </section>
@@ -24,7 +29,13 @@
     </header>
     <main>
       <section class="left">
-        <input type="number" class="guess" />
+        <input
+          type="number"
+          class="guess"
+          placeholder="Your number..."
+          pattern="[0-9]*"
+          name="marquee2"
+        />
         <button class="btn check">Check!</button>
       </section>
       <section class="right">
